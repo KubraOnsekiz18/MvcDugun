@@ -1,0 +1,48 @@
+﻿@model MVCOtel.Models.RezervasyonM
+@{
+    ViewBag.Title = "Rezervasyon Form";
+}
+
+<h2>Rezervasyon Form</h2>
+@using (Html.BeginForm())
+{
+
+    @Html.HiddenForm(x=>x.OdaID)
+    @Html.HiddenForm(x => x.UserID)
+    <div>
+        <label>Giriş Tarihi</label>
+        <input class="datepicker" name="GirisTarihi" />
+    </div>
+    <div>
+        <label>Çıkış Tarihi</label>
+        <input class="datepicker" name="CikisTarihi" />
+    </div>
+    <div>
+        <label>Kişi Sayısı</label>
+        <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+    <div>
+        <label>Fiyat</label><span>@ViewBag.OdaFiyat</span>
+    </div>
+    <input type="submit" value="KAYDET" />
+
+}
+
+@section Scripts{
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $( function() {
+    $( ".datepicker" ).datepicker();
+  } );
+</script>
+
+}

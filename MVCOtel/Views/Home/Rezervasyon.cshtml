@@ -1,0 +1,21 @@
+﻿@model MVCOtel.Models.OdaM
+@{
+    ViewBag.Title = "Rezervasyon";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<section class="demo-2">
+    <div class="container">
+        <h2>Rezervasyon</h2>
+        <div class="col-md-6">
+            <img src="/Content/oda/@Model.ResimURL" width="300" />
+            <p>@Model.Baslik</p>
+            <p>Metrekare:@Model.m2</p>
+            <p>Fiyat:@Model.Fiyat</p>
+        </div>
+        <div class="col-md-6">
+@Html.Action("RezervasyonForm");
+        </div>
+    </div>
+</section>
+
+
